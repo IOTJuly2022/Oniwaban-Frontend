@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  private baseURL: string = "http://localhost:8082";
+  private baseURL: string = "http://oniwabanspring9-env.eba-rx6f4mp2.us-west-2.elasticbeanstalk.com";
   constructor(private httpClient: HttpClient) {
     this.getAllProducts().subscribe(x => {
       console.log(x);
