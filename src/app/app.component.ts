@@ -8,10 +8,9 @@ import { ProductService } from './product.service';
 })
 export class AppComponent {
   title = 'Oniwaban-Frontend';
-  constructor(private productService:ProductService){}
+  constructor(private productService: ProductService) { }
 
-  ngOnInit():void{
-    this.productService.getAllProducts();
+  ngOnInit(): void {
   }
-  
+
 }
