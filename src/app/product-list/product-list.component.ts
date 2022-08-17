@@ -9,6 +9,7 @@ import { ProductService } from '../product.service';
 })
 export class ProductListComponent implements OnInit {
   products!:Product[];
+  filteredProducts:Product[] = [];
 
   constructor(private productService:ProductService) {
     
@@ -18,6 +19,7 @@ export class ProductListComponent implements OnInit {
     this.productService.getAllProducts().subscribe(
       (response)=>{
         this.products = response;
+        this.filteredProducts = response;
       }
     );
   }

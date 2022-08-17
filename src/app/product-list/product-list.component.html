@@ -1,5 +1,18 @@
-<div class="product-container" >
-    <div *ngFor="let product of products">
-        <app-product [product]="product"></app-product>
+<div class="product-list">
+    <div class="product-list-container">
+        <div class="search-container">
+
+            <input class="form-control form-control-lg" type="text" placeholder="Search for products..."
+                aria-label=".form-control-lg example">
+            <div>
+                <button type="button" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+
+        <div class="product-container">
+            <div *ngFor="let product of filteredProducts">
+                <app-product [product]="product"></app-product>
+            </div>
+        </div>
     </div>
 </div>
