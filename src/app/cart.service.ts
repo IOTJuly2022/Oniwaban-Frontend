@@ -19,4 +19,8 @@ export class CartService {
   listCartProducts() : Product[] {
     return this.cartList;
   }
+
+  removeFromCart(p : Product) { 
+    this.cartList = this.cartList.filter(prod => p.id != prod.id);
+  }
 }
