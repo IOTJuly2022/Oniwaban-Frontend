@@ -4,7 +4,7 @@
     <h4>${{(product.priceInCents/100).toFixed(2)}}</h4>
     <!--<span>{{product.description}}</span>-->
     <div class="product-footer" *ngIf="added">
-        <button type="button" class="btn btn-primary">More Info</button>
+        <button type="button" class="btn btn-primary" (click)="viewProduct()">More Info</button>
         <button type="button" class="btn btn-info" (click)="addToCart()">Add to Cart</button>
     </div>
     <div *ngIf="!added">

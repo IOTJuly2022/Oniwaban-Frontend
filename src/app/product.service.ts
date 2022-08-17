@@ -30,7 +30,9 @@ export class ProductService {
       })
     );
   }
-
+  getProductById(id:number):Product{
+    return this.products[id];
+  }
 
 
 }

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../product';
 import { CartService } from '../cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -8,11 +9,11 @@ import { CartService } from '../cart.service';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  @Input() product!:Product;
-  @Input() added:boolean = true;
-  
+  @Input() product!: Product;
+  @Input() added: boolean = true;
 
-  constructor(private cartService : CartService) { }
+
+  constructor(private cartService: CartService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -27,6 +28,9 @@ export class ProductComponent implements OnInit {
     this.cartService.removeFromCart(this.product);
     alert("removed from cart");
     console.log(this.cartService.listCartProducts());
+  }
+  viewProduct(): void {
+    this.router.navigate(['/viewproduct', this.product.id]);
   }
 
 }
