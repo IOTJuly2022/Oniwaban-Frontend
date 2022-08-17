@@ -6,13 +6,12 @@ div.product-container {
     align-items: stretch;
 }
 
-div.product-list-container{
+div.product-search-container{
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    margin-top: 1em;
-    margin-bottom: 5em;
+    flex-direction: row
 }
+
 div.search-container button{
     position: absolute;
     right: 0;
@@ -25,6 +24,7 @@ div.search-container{
     flex-direction: row;
     align-items: center;
     width: 30vw;
+    justify-self: center;
 }
 
 div.product-list{
