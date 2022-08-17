@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable ,EventEmitter, Output} from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Product } from './product';
 
 @Injectable({
@@ -7,6 +8,7 @@ import { Product } from './product';
 })
 export class CartService {
 
+  @Output() update = new EventEmitter<Product[]>();
   cartList! : Product[];
 
   constructor() {
@@ -21,8 +23,13 @@ export class CartService {
     return this.cartList;
   }
 
+
+  updater() {
+    this.update.emit(this.cartList);
+  }
+
   removeFromCart(p : Product) { 
     this.cartList = this.cartList.filter(prod => p.id != prod.id);
-    //this.router.navigate([this.router.url])
+    this.updater();
   }
 }
