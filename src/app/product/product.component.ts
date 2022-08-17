@@ -23,4 +23,10 @@ export class ProductComponent implements OnInit {
     console.log(this.cartService.listCartProducts());
   }
 
+  removeFromCart(): void {
+    this.cartService.removeFromCart(this.product);
+    alert("removed from cart");
+    console.log(this.cartService.listCartProducts());
+  }
+
 }
