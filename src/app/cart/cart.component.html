@@ -1,1 +1,10 @@
-<p>cart works!</p>
+<h1>My Cart</h1>
+<div class="product-container" >
+    <div *ngFor="let product of cartList">
+        <app-product [product]="product" [added]="false"></app-product>
+    </div>
+</div>
+
+<div>
+    <p>Total Cost: </p>
+</div>
