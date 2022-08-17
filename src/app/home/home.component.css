@@ -1,7 +1,6 @@
 div.home-container{
     display: flex;
     justify-content: center;
-    flex-direction: row;
     margin-top: 10em;
 }
 
@@ -9,6 +8,9 @@ div.home-container input{
     width: 50%;
 }
 div.search-container{
-
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     width: 30vw;
 }
+
