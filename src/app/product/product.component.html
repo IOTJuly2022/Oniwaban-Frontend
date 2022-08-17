@@ -8,6 +8,6 @@
         <button type="button" class="btn btn-info" (click)="addToCart()">Add to Cart</button>
     </div>
     <div *ngIf="!added">
-        <button type="button" class="btn btn-primary">Remove from cart</button>
+        <button type="button" class="btn btn-primary" (click)="removeFromCart()">Remove from cart</button>
     </div>
 </div>
