@@ -4,10 +4,14 @@ div.home-container{
     margin-top: 10em;
 }
 
-div.home-container input{
-    width: 50%;
+div.search-container button{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
 }
 div.search-container{
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
