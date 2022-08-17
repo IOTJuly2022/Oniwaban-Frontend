@@ -1,6 +1,10 @@
-<div>
+<div class="product-card">
     <img class="product-img" src={{product.imageUrl}}/>
-    <h3>{{product.name}}</h3>
-    <p>${{product.priceInCents/100}}</p>
-    <span>{{product.description}}</span>
+    <h3 class="product-title">{{product.name}}</h3>
+    <h4>${{product.priceInCents/100}}</h4>
+    <!--<span>{{product.description}}</span>-->
+    <div class="product-footer">
+        <button type="button" class="btn btn-primary">More Info</button>
+        <button type="button" class="btn btn-info">Add to Cart</button>
+    </div>
 </div>
