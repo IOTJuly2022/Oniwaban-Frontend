@@ -23,5 +23,6 @@ export class CartService {
 
   removeFromCart(p : Product) { 
     this.cartList = this.cartList.filter(prod => p.id != prod.id);
+    //this.router.navigate([this.router.url])
   }
 }

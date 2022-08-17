@@ -11,7 +11,7 @@ import { Product } from '../product';
 export class CartComponent implements OnInit {
 
   @Input() cartList!: Product[];
-  totalCost: number = 0;
+  @Input() totalCost: number = 0;
 
   constructor(private cartService: CartService, private router: Router) {
     this.cartList = cartService.cartList;
