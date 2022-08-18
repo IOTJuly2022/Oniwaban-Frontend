@@ -3,7 +3,6 @@ div.home-container{
     display: flex;
     justify-content: center;
     flex-direction: row;
-    margin-top: 1em;
     margin-bottom: 5em;
 }
 div.home-logo{
@@ -26,4 +25,3 @@ div.search-container{
     align-items: center;
     width: 30vw;
 }
-

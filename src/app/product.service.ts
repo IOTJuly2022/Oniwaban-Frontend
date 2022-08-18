@@ -30,7 +30,15 @@ export class ProductService {
       })
     );
   }
-
+  getProductById(id:number):Product{
+    if(this.products == null){
+      this.getAllProducts().subscribe(r =>{
+        return r[id];
+      });
+    }
+    return this.products[id];
+    
+  }
 
 
 }

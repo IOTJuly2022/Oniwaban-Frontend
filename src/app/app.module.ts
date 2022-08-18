@@ -10,6 +10,8 @@ import { AboutComponent } from './about/about.component';
 import { CartComponent } from './cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReviewComponent } from './review/review.component';
+import { FormsModule } from '@angular/forms';
+import { ProductViewComponent } from './product-view/product-view.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { ReviewComponent } from './review/review.component';
     ProductComponent,
     AboutComponent,
     CartComponent,
-    ReviewComponent
+    ReviewComponent,
+    ProductViewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

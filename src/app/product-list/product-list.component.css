@@ -9,7 +9,8 @@ div.product-container {
 div.product-search-container{
     display: flex;
     justify-content: center;
-    flex-direction: row
+    flex-direction: row;
+    margin-top:1em;
 }
 
 div.search-container button{
