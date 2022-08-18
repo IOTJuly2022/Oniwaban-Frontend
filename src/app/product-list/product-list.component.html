@@ -9,6 +9,10 @@
 </div>
 <div class="product-list-container">
 
+    <div *ngIf="checkIfHome()">
+        <br>
+        <h2 style="text-align:center;">Featured Products</h2>
+    </div>
 
     <div class="product-container">
         <div *ngFor="let product of filteredProducts">
