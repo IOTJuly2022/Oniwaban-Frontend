@@ -42,7 +42,7 @@ export class ProductListComponent implements OnInit {
         let query = this.routes.snapshot.paramMap.get("query");
         if (query != null) {
           this.filterProducts(query);
-        } else {
+        } else if (this.checkIfHome()) {
           this.filteredProducts = [this.products[0],this.products[1],this.products[2],this.products[3]];
         }
 
