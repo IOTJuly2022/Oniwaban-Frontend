@@ -21,6 +21,12 @@ div.product-card {
 }
 
 
+@media only screen and (max-width: 728px) {
+    div.product-card{
+        width: 85vw;
+        min-width: none;
+    }
+}
 
 h3.product-title {
     height: 2em;
