@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Review } from '../review';
+import { ReviewService } from '../review.service';
 
 @Component({
   selector: 'app-review',
@@ -10,6 +12,7 @@ export class ReviewComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
