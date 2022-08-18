@@ -4,12 +4,15 @@ import { AboutComponent } from './about/about.component';
 import { CartComponent } from './cart/cart.component';
 import { HomeComponent } from './home/home.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { ReviewComponent } from './review/review.component';
+
 
 const routes: Routes = [
   {path:"", component:HomeComponent},
   {path:"products", component:ProductListComponent},
   {path:"cart", component: CartComponent},
-  {path:"about", component:AboutComponent}
+  {path:"about", component:AboutComponent},
+  {path:"review", component:ReviewComponent}
 
 ];
 
