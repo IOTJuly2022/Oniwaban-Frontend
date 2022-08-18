@@ -11,9 +11,11 @@ export class CartComponent implements OnInit {
 
   cartList: Product[] = [];
   totalCost: number = 0;
+  numItems!: number;
 
   constructor(private cartService: CartService) {
     this.cartList = cartService.cartList;
+    this.numItems = this.cartList.length
     this.totalCost = this.calculate()/100;
    }
 
@@ -33,6 +35,7 @@ export class CartComponent implements OnInit {
     this.cartService.update.subscribe((data:Product[]) => {
       this.cartList = data;
       this.totalCost = (this.calculate()/100);
+      this.numItems =0 +  this.cartList.length;
       }, (error) => {
       console.log('error');
       });

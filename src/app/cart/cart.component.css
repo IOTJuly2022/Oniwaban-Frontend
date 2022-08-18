@@ -5,3 +5,7 @@ div.product-container {
     justify-content: center;
     align-items: stretch;
 }
+
+div.cartInfo {  
+    font-size: 22px;
+}
