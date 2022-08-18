@@ -1,0 +1,18 @@
+div.product-view-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+div.product-view{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    width: 30vw;
+}
+
+div.product-view img{
+    width: 100%;
+    height: auto;
+}
