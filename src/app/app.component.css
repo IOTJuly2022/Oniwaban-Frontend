@@ -12,3 +12,10 @@ div#notification{
 div#notification h3{
     display: flex;
 }
+
+@media screen and (max-width: 728) {
+    div.search-container{
+        width: 90vw;
+
+    }
+}

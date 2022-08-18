@@ -24,9 +24,9 @@ div.search-container{
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 30vw;
     justify-self: center;
 }
+
 
 div.product-list{
     display: flex;
@@ -34,4 +34,21 @@ div.product-list{
     flex-direction: row;
     margin-top: 1em;
     margin-bottom: 5em;
+}
+
+
+
+@media only screen and (min-width: 729px) {
+    div.search-container{
+        width:30vw;
+
+
+    }
+}
+
+@media only screen and (max-width: 728px) {
+    div.search-container{
+        width: 90vw;
+
+    }
 }
