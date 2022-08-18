@@ -32,7 +32,7 @@ export class CartComponent implements OnInit {
   updater() {
     this.cartService.update.subscribe((data:Product[]) => {
       this.cartList = data;
-      this.totalCost = this.calculate()/100;
+      this.totalCost = (this.calculate()/100);
       }, (error) => {
       console.log('error');
       });
