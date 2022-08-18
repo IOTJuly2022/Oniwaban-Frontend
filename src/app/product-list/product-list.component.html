@@ -1,7 +1,7 @@
 <div class="product-search-container">
     <div class="search-container">
         <input class="form-control form-control-lg" placeholder="Search for products..."
-            aria-label=".form-control-lg example" [(ngModel)]="searchQuery" >
+            aria-label=".form-control-lg example" [(ngModel)]="searchQuery"  (keyup.enter)="search()">
         <div>
             <button type="button" class="btn btn-primary" (click)="search()">Search</button>
         </div>
