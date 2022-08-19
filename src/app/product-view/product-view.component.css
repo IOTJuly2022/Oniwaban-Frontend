@@ -10,6 +10,7 @@ div.product-view{
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     width: 30vw;
+    background-color: white;
 }
 
 @media only screen and (max-width: 728px) {
@@ -32,6 +33,7 @@ div.review-container{
 }
 
 div.review-card{
+    background-color: white;
     display: block;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     padding-left: 1em;

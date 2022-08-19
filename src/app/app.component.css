@@ -13,3 +13,11 @@ div#notification h3{
     display: flex;
 }
 
+::ng-deep body {
+    background: lightgray;
+    height: 100%;
+}
+::ng-deep html {
+    height: 100%;
+}
+
