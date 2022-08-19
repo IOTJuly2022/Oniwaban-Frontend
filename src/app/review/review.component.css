@@ -29,7 +29,7 @@ label {
 }
 
 /* Style the submit button */
-input[type=submit] {
+.btn {
   background-color: #0000CD;
   color: white;
   padding: 12px 20px;
@@ -37,6 +37,10 @@ input[type=submit] {
   border-radius: 4px;
   cursor: pointer;
   float: right;
+}
+
+input.btn[type="submit"]:hover{
+  background-color: #555;
 }
 
 /* Style the container */
