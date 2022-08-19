@@ -14,7 +14,7 @@ import { ReviewService } from '../review.service';
 export class ProductViewComponent implements OnInit {
   product!:Product;
   reviews:Review[] = [];
-  constructor(private productService:ProductService, private routes: ActivatedRoute, private reviewService:ReviewService, private changeDetection: ChangeDetectorRef, private cartService: CartService) {
+  constructor(private productService:ProductService, private routes: ActivatedRoute, private reviewService:ReviewService, private changeDetection: ChangeDetectorRef, private cartService: CartService, private router: Router) {
   
   }
 
@@ -53,5 +53,8 @@ export class ProductViewComponent implements OnInit {
     }
   }
 
+  addReview(){
+    this.router.navigate(["/review",this.product.id]);
+  }
 
 }
