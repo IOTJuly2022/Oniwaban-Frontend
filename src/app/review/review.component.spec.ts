@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
 
 import { ReviewComponent } from './review.component';
 
@@ -8,7 +10,22 @@ describe('ReviewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ReviewComponent ]
+      declarations: [ ReviewComponent ],
+      providers: [
+        {
+    provide: ActivatedRoute,
+    useValue: {
+        snapshot: {
+            paramMap: {
+                get(): string {
+                    return '123';
+                },
+            },
+        },
+    },
+},
+],
+      imports: [HttpClientModule]
     })
     .compileComponents();
 

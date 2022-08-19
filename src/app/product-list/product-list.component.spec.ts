@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
 
 import { ProductListComponent } from './product-list.component';
 
@@ -8,7 +10,22 @@ describe('ProductListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductListComponent ]
+      declarations: [ ProductListComponent ],
+      providers: [
+        {
+    provide: ActivatedRoute,
+    useValue: {
+        snapshot: {
+            paramMap: {
+                get(): string {
+                    return '123';
+                },
+            },
+        },
+    },
+},
+],
+      imports: [HttpClientModule]
     })
     .compileComponents();
 
