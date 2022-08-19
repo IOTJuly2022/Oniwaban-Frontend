@@ -14,10 +14,18 @@ export class AboutComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
 
   openDialog(): void{
-    let dialogRef = this.dialog.open(DialogComponent, {
+    /*let dialogRef = this.dialog.open(DialogComponent, {
       width: '600px',
       height: '400px'
-    })
+    })*/
+    const contactInfo = document.getElementById("nandith-info");
+    const contactButton = document.getElementById("nandith-button");
+    if(contactInfo != null){
+      contactInfo.style.display="block";
+      if(contactButton !=null){
+        contactButton.style.display="none";
+      }
+    }
 
   }
 

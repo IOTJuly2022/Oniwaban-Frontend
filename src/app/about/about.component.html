@@ -1,60 +1,78 @@
 <div class="about-section">
-    <h1>About Us and Our Project</h1>
-    <p>This web application presents a fully functional storefront that sells everything baseball related from bats and gloves to cards and posters.</p>
-    <p>To bring our app to life we used HTML, CSS and Angular on the frontend with Springboot and Java on the backend.</p>
-  </div>
-  
-  <h2 style="text-align:center">Our Team</h2>
-  <div class="row">
-    <div class="column">
-      <div class="card">
-        <img src="https://raw.githubusercontent.com/IOTJuly2022/Oniwaban-Frontend/images/zeroooo.jpg" alt="Jane" style="width:100%">
-        <div class="container">
-          <h2>Nandith Narayan</h2>
-          <p class="title">The Chosen One</p>
-          <p>Florida Institute of Technology graduate. Enjoys teaching others programming and is quite a skilled teacher at that.</p>
-          <p>nandith.narayan@cognizant.com</p>
-          <p><button class="button" type="button"(click)="openDialog()">Contact</button></p>
-        </div>
-      </div>
-    </div>
-  
-    <div class="column">
-      <div class="card">
-        <img src="https://raw.githubusercontent.com/IOTJuly2022/Oniwaban-Frontend/images/KenSFVC.webp" alt="Mike" style="width:100%">
-        <div class="container">
-          <h2>Ken Bacchiani</h2>
-          <p class="title">Baseball Connoisseur</p>
-          <p>Graduated from University of Wisconsin and the ideasmith for our baseball store. In a previous life, he was a MLB MVP. </p>
-          <p>ken.bacchiani@cognizant.com</p>
-          <p><button class="button">Contact</button></p>
-        </div>
-      </div>
-    </div>
+  <h1>About Us and Our Project</h1>
+  <p>This web application presents a fully functional storefront that sells everything baseball related from bats and
+    gloves to cards and posters.</p>
+  <p>To bring our app to life we used HTML, CSS and Angular on the frontend with Springboot and Java on the backend.</p>
+</div>
 
-    <div class="column">
-        <div class="card">
-          <img src="https://github.com/IOTJuly2022/Oniwaban-Frontend/blob/images/images.jfif?raw=true" alt="Mike" style="width:100%">
-          <div class="container">
-            <h2>Eli Oceanak</h2>
-            <p class="title">Art Director</p>
-            <p>University of Wyoming graduate. Currently enjoying the mountainous region of Colorado. Hobbies include build-a-bear and etch-a-sketch.</p>
-            <p>eli.oceanak@cognizant.com</p>
-            <p><button class="button">Contact</button></p>
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="https://raw.githubusercontent.com/IOTJuly2022/Oniwaban-Frontend/images/zeroooo.jpg" alt="Jane"
+        style="width:100%">
+      <div class="container">
+        <h2>Nandith Narayan</h2>
+        <p class="title">The Chosen One</p>
+        <p>Florida Institute of Technology graduate. Enjoys teaching others programming and is quite a skilled teacher
+          at that.</p>
+        <p>nandith.narayan@cognizant.com</p>
+        <p><button id="nandith-button" class="button" type="button" (click)="openDialog()">Contact</button></p>
+        <div id="nandith-info">
+
+          <h1 mat-dialog-title>Additional Info</h1>
+          <div mat-dialog-content>
+            <p>Instagram: @nandiththegod</p>
+            <p>LinkedIn: https://www.linkedin.com/in/nandith-narayan/ </p>
+            <p>Facebook: https://www.facebook.com/thechosenone</p>
           </div>
         </div>
       </div>
-  
-    <div class="column">
-      <div class="card">
-        <img src="https://raw.githubusercontent.com/IOTJuly2022/Oniwaban-Frontend/images/RyuSFVC.webp" alt="John" style="width:100%">
-        <div class="container">
-          <h2>Trent Williams</h2>
-          <p class="title">Designer</p>
-          <p>Graduated from Capella University. Since he's quite tall people assume that he's a basketball player. Maybe in the next life, but for now he's a software engineer.</p>
-          <p>trent.williams@cognizant.com</p>
-          <p><button class="button">Contact</button></p>
-        </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="https://raw.githubusercontent.com/IOTJuly2022/Oniwaban-Frontend/images/KenSFVC.webp" alt="Mike"
+        style="width:100%">
+      <div class="container">
+        <h2>Ken Bacchiani</h2>
+        <p class="title">Baseball Connoisseur</p>
+        <p>Graduated from University of Wisconsin and the ideasmith for our baseball store. In a previous life, he was a
+          MLB MVP. </p>
+        <p>ken.bacchiani@cognizant.com</p>
+        <p><button class="button">Contact</button></p>
       </div>
     </div>
   </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="https://github.com/IOTJuly2022/Oniwaban-Frontend/blob/images/images.jfif?raw=true" alt="Mike"
+        style="width:100%">
+      <div class="container">
+        <h2>Eli Oceanak</h2>
+        <p class="title">Art Director</p>
+        <p>University of Wyoming graduate. Currently enjoying the mountainous region of Colorado. Hobbies include
+          build-a-bear and etch-a-sketch.</p>
+        <p>eli.oceanak@cognizant.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="https://raw.githubusercontent.com/IOTJuly2022/Oniwaban-Frontend/images/RyuSFVC.webp" alt="John"
+        style="width:100%">
+      <div class="container">
+        <h2>Trent Williams</h2>
+        <p class="title">Designer</p>
+        <p>Graduated from Capella University. Since he's quite tall people assume that he's a basketball player. Maybe
+          in the next life, but for now he's a software engineer.</p>
+        <p>trent.williams@cognizant.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
