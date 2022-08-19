@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CartService } from '../cart.service';
 import { Product } from '../product';
 import { ProductService } from '../product.service';
 import { Review } from '../review';
@@ -13,7 +14,7 @@ import { ReviewService } from '../review.service';
 export class ProductViewComponent implements OnInit {
   product!:Product;
   reviews:Review[] = [];
-  constructor(private productService:ProductService, private routes: ActivatedRoute, private reviewService:ReviewService, private changeDetection: ChangeDetectorRef) {
+  constructor(private productService:ProductService, private routes: ActivatedRoute, private reviewService:ReviewService, private changeDetection: ChangeDetectorRef, private cartService: CartService) {
   
   }
 
@@ -25,6 +26,10 @@ export class ProductViewComponent implements OnInit {
       this.changeDetection.detectChanges();
       console.log(this.reviews);
     })
+  }
+
+  addToCart(): void {
+    this.cartService.addToCart(this.product);
   }
 
 }
