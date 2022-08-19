@@ -31,7 +31,7 @@ export class ProductComponent implements OnInit {
     console.log(this.cartService.listCartProducts());
   }
   viewProduct(): void {
-    this.router.navigate(['/viewproduct', this.product.id - 1]);
+    this.router.navigate(['/viewproduct', this.product.id]);
   }
 
   sendAlert(msg: string): void {

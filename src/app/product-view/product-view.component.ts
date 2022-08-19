@@ -23,7 +23,7 @@ export class ProductViewComponent implements OnInit {
     this.reviewService.getReviewsById(id).subscribe((r)=>{
       this.reviews = r.filter((x)=>true);
       this.changeDetection.detectChanges();
-      
+      console.log(this.reviews);
     })
   }
 

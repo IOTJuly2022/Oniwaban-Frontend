@@ -6,9 +6,11 @@
         <p>{{product.description}}</p>
 
     </div>
+</div>
     <div class="review-container">
         <div class="review-card" *ngFor="let r of reviews">
-            {{r.description}}
+            <h4>Review By: anonymous</h4>
+            <img class="star-img" src="https://raw.githubusercontent.com/IOTJuly2022/Oniwaban-Frontend/images/star.png" *ngFor="let _ of [].constructor(r.rating)"/>
+            <p>{{r.description}}</p>
         </div>
     </div>
-</div>

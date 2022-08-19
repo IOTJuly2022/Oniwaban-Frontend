@@ -35,7 +35,7 @@ export class ProductService {
       const response = await this.getAllProducts().toPromise();
     }
     
-    return this.products[id];
+    return this.products[id-1];
     
   }
 
