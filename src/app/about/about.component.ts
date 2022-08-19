@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from '../dialog/dialog.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @Component({
@@ -11,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 })
 export class AboutComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor() { }
 
   openDialogNandith(): void{
   

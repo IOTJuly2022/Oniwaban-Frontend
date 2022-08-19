@@ -11,12 +11,12 @@
         <label for="country">Overall Rating</label>
       </div>
       <div class="col-75">
-        <select id="country" name="country">
-          <option value="australia">5 Stars</option>
-          <option value="canada">4 Stars</option>
-          <option value="usa">3 Stars</option>
-          <option value="usa">2 Stars</option>
-          <option value="usa">1 Star</option>
+        <select id="country" name="country" [(ngModel)]="rating">
+          <option value="5">5 Stars</option>
+          <option value="4">4 Stars</option>
+          <option value="3">3 Stars</option>
+          <option value="2">2 Stars</option>
+          <option value="1">1 Star</option>
         </select>
       </div>
     </div>
@@ -25,14 +25,12 @@
         <label for="subject">Add a Written Review</label>
       </div>
       <div class="col-75">
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" [(ngModel)]="description"></textarea>
+      </div>
+      <div class="button-container-r">
+        <button type="button" class="btn btn-outline-primary" (click)="submitReview()">Submit Review</button>
       </div>
     </div>
-    <div class="button-container-p">
-      <button type="button" class="btn btn-primary">Submit Review</button>
-      <div class="row">
-        <input class="btn" type="submit" id="submit" value="Submit">
-      </div>
-    </div>
+    
   </form>
 </div>

@@ -78,3 +78,9 @@ div.center-me-please{
   text-align: center;
   width: 100%;
 }
+
+div.button-container-r{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
