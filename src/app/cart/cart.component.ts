@@ -48,6 +48,8 @@ export class CartComponent implements OnInit {
     let notificationDiv = document.getElementById("notification");
     if (notificationDiv != null) {
       notificationDiv.style.height = "0";
+      //notificationDiv.innerText = "";
+      setTimeout(()=>{if(notificationDiv != null){notificationDiv.innerText=""}}, 100);
     }
   }
 
