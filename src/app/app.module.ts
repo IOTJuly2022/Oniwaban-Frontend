@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,8 @@ import { ReviewComponent } from './review/review.component';
 import { FormsModule } from '@angular/forms';
 import { ProductViewComponent } from './product-view/product-view.component';
 import { ReviewListComponent } from './review-list/review-list.component';
+import { DialogComponent } from './dialog/dialog.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,13 +27,17 @@ import { ReviewListComponent } from './review-list/review-list.component';
     CartComponent,
     ReviewComponent,
     ProductViewComponent,
-    ReviewListComponent
+    ReviewListComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
