@@ -10,9 +10,51 @@ div.product-view{
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     width: 30vw;
+    background-color: white;
+    border-radius: 0.25rem;
+}
+
+@media only screen and (max-width: 728px) {
+    div.product-view{
+        width: 85vw;
+        min-width: none;
+    }
 }
 
 div.product-view img{
     width: 100%;
     height: auto;
+}
+
+div.review-container{ 
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 1em;
+    border-radius: 0.25rem;
+}
+
+div.review-card{
+    background-color: white;
+    display: block;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    padding-left: 1em;
+    padding-right: 1em;
+    
+}
+div.review-card p{
+    background-color: rgb(241, 241, 241);
+}
+
+img.star-img{
+    height: 1em;
+    width: 1em;
+    margin-right:0.3em;
+}
+
+div.button-container-p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: center;
 }

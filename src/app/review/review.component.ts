@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Product } from '../product';
+import { ProductService } from '../product.service';
 import { Review } from '../review';
 import { ReviewService } from '../review.service';
 
@@ -8,11 +11,13 @@ import { ReviewService } from '../review.service';
   styleUrls: ['./review.component.css']
 })
 export class ReviewComponent implements OnInit {
-
-  constructor() { }
+  id = parseInt(this.routes.snapshot.paramMap.get("id")!);
+  product!:Product;
+  constructor(private routes: ActivatedRoute, private productService:ProductService, private changeDetection: ChangeDetectorRef) { }
 
   ngOnInit(): void {
-
+    console.log(this.id);
+    this.productService.getProductById(this.id).then(p=>{this.product = p;this.changeDetection.detectChanges();});
   }
 
 }

@@ -31,7 +31,7 @@ export class ProductComponent implements OnInit {
     console.log(this.cartService.listCartProducts());
   }
   viewProduct(): void {
-    this.router.navigate(['/viewproduct', this.product.id - 1]);
+    this.router.navigate(['/viewproduct', this.product.id]);
   }
 
   sendAlert(msg: string): void {
@@ -40,6 +40,7 @@ export class ProductComponent implements OnInit {
       notificationDiv.innerHTML = "<h3>"+msg+"</h3>";
       notificationDiv.style.height = "3em";
       setTimeout(()=>{this.retractAlert();}, 5000);
+      
     }
   }
   
@@ -49,6 +50,7 @@ export class ProductComponent implements OnInit {
     if (notificationDiv != null) {
       notificationDiv.style.height = "0";
       //notificationDiv.innerText = "";
+      setTimeout(()=>{if(notificationDiv != null){notificationDiv.innerText=""}}, 100);
     }
   }
 

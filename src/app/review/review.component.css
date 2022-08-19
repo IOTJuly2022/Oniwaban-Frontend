@@ -6,7 +6,7 @@
 
 #fh6 {
   padding: 2px 15px;
-  color: #4d0er;
+  color: black;
   text-align: center;
   font-weight: normal;
  }
@@ -46,8 +46,11 @@ input.btn[type="submit"]:hover{
 /* Style the container */
 .container {
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: white;
   padding: 20px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* Floating column for labels: 25% width */
@@ -71,3 +74,7 @@ input.btn[type="submit"]:hover{
   clear: both;
 }
 
+div.center-me-please{
+  text-align: center;
+  width: 100%;
+}

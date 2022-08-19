@@ -30,13 +30,12 @@ export class ProductService {
       })
     );
   }
-  getProductById(id:number):Product{
+  async getProductById(id:number):Promise<Product>{
     if(this.products == null){
-      this.getAllProducts().subscribe(r =>{
-        return r[id];
-      });
+      const response = await this.getAllProducts().toPromise();
     }
-    return this.products[id];
+    
+    return this.products[id-1];
     
   }
 

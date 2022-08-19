@@ -31,6 +31,28 @@ export class CartComponent implements OnInit {
     this.updater();
   }
 
+  checkOut() : void {
+    this.sendAlert("This demo doesn't support payment processing");
+  }
+
+  sendAlert(msg: string): void {
+    let notificationDiv = document.getElementById("notification");
+    if (notificationDiv != null) {
+      notificationDiv.innerHTML = "<h3>"+msg+"</h3>";
+      notificationDiv.style.height = "3em";
+      setTimeout(()=>{this.retractAlert();}, 5000);
+    }
+  }
+
+  retractAlert():void{
+    let notificationDiv = document.getElementById("notification");
+    if (notificationDiv != null) {
+      notificationDiv.style.height = "0";
+      //notificationDiv.innerText = "";
+      setTimeout(()=>{if(notificationDiv != null){notificationDiv.innerText=""}}, 100);
+    }
+  }
+
   updater() {
     this.cartService.update.subscribe((data:Product[]) => {
       this.cartList = data;
