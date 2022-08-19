@@ -12,17 +12,17 @@ import { ReviewService } from '../review.service';
   styleUrls: ['./product-view.component.css']
 })
 export class ProductViewComponent implements OnInit {
-  product!:Product;
-  reviews:Review[] = [];
-  constructor(private productService:ProductService, private routes: ActivatedRoute, private reviewService:ReviewService, private changeDetection: ChangeDetectorRef, private cartService: CartService, private router: Router) {
-  
+  product!: Product;
+  reviews: Review[] = [];
+  constructor(private productService: ProductService, private routes: ActivatedRoute, private reviewService: ReviewService, private changeDetection: ChangeDetectorRef, private cartService: CartService, private router: Router) {
+
   }
 
   ngOnInit(): void {
     let id = parseInt(this.routes.snapshot.paramMap.get("id")!);
-    this.productService.getProductById(id).then(p=>{this.product = p;this.changeDetection.detectChanges();});
-    this.reviewService.getReviewsById(id).subscribe((r)=>{
-      this.reviews = r.filter((x)=>true);
+    this.productService.getProductById(id).then(p => { this.product = p; this.changeDetection.detectChanges(); });
+    this.reviewService.getReviewsById(id).subscribe((r) => {
+      this.reviews = r.filter((x) => true);
       this.changeDetection.detectChanges();
       console.log(this.reviews);
     })
@@ -30,31 +30,31 @@ export class ProductViewComponent implements OnInit {
 
   addToCart(): void {
     this.cartService.addToCart(this.product);
-    this.sendAlert("Added "+this.product.name+" to Cart");
+    this.sendAlert("Added " + this.product.name + " to Cart");
   }
 
   sendAlert(msg: string): void {
     let notificationDiv = document.getElementById("notification");
     if (notificationDiv != null) {
-      notificationDiv.innerHTML = "<h3>"+msg+"</h3>";
+      notificationDiv.innerHTML = "<h3>" + msg + "</h3>";
       notificationDiv.style.height = "3em";
-      setTimeout(()=>{this.retractAlert();}, 5000);
-      
+      setTimeout(() => { this.retractAlert(); }, 5000);
+
     }
   }
-  
 
-  retractAlert():void{
+
+  retractAlert(): void {
     let notificationDiv = document.getElementById("notification");
     if (notificationDiv != null) {
       notificationDiv.style.height = "0";
       //notificationDiv.innerText = "";
-      setTimeout(()=>{if(notificationDiv != null){notificationDiv.innerText=""}}, 100);
+      setTimeout(() => { if (notificationDiv != null) { notificationDiv.innerText = "" } }, 100);
     }
   }
 
-  addReview(){
-    this.router.navigate(["/review",this.product.id]);
+  addReview() {
+    this.router.navigate(["/review", this.product.id]);
   }
 
 }
