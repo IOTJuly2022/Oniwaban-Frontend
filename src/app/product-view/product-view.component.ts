@@ -30,6 +30,28 @@ export class ProductViewComponent implements OnInit {
 
   addToCart(): void {
     this.cartService.addToCart(this.product);
+    this.sendAlert("Added "+this.product.name+" to Cart");
   }
+
+  sendAlert(msg: string): void {
+    let notificationDiv = document.getElementById("notification");
+    if (notificationDiv != null) {
+      notificationDiv.innerHTML = "<h3>"+msg+"</h3>";
+      notificationDiv.style.height = "3em";
+      setTimeout(()=>{this.retractAlert();}, 5000);
+      
+    }
+  }
+  
+
+  retractAlert():void{
+    let notificationDiv = document.getElementById("notification");
+    if (notificationDiv != null) {
+      notificationDiv.style.height = "0";
+      //notificationDiv.innerText = "";
+      setTimeout(()=>{if(notificationDiv != null){notificationDiv.innerText=""}}, 100);
+    }
+  }
+
 
 }

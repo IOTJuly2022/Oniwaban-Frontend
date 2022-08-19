@@ -4,16 +4,16 @@
         <h3 class="product-title">{{product.name}}</h3>
         <h4>${{(product.priceInCents/100).toFixed(2)}}</h4>
         <p>{{product.description}}</p>
-
-    </div>
-</div>
-    <div class="review-container">
-        <div class="review-card" *ngFor="let r of reviews">
-            <h4>Review By: anonymous</h4>
-            <img class="star-img" src="https://raw.githubusercontent.com/IOTJuly2022/Oniwaban-Frontend/images/star.png" *ngFor="let _ of [].constructor(r.rating)"/>
-            <p>{{r.description}}</p>
+        <div class="button-container-p">
+            <button type="button" class="btn btn-primary" (click)="addToCart()">Add to Cart</button>
         </div>
     </div>
-    <div>
-        <button type="button" class="btn btn-primary" (click)="addToCart()">Add to Cart</button>
+</div>
+<div class="review-container">
+    <div class="review-card" *ngFor="let r of reviews">
+        <h4>Review By: anonymous</h4>
+        <img class="star-img" src="https://raw.githubusercontent.com/IOTJuly2022/Oniwaban-Frontend/images/star.png"
+            *ngFor="let _ of [].constructor(r.rating)" />
+        <p>{{r.description}}</p>
     </div>
+</div>
