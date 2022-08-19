@@ -6,7 +6,7 @@
 
 #fh6 {
   padding: 2px 15px;
-  color: #4d0er;
+  color: black;
   text-align: center;
   font-weight: normal;
  }
@@ -70,3 +70,7 @@ input[type=submit] {
   clear: both;
 }
 
+div.center-me-please{
+  text-align: center;
+  width: 100%;
+}
