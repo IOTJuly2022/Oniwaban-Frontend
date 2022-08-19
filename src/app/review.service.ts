@@ -23,6 +23,13 @@ export class ReviewService {
       })
     );
   }
+  getReviewsById(id:number): Observable<Review[]> {
+    return this.httpClient.get<Review[]>(this.baseURL + "/getReviews/"+id).pipe(
+      map(response => {
+        return response;
+      })
+    );
+  }
 
 
 }

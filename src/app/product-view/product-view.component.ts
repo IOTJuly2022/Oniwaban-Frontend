@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../product';
 import { ProductService } from '../product.service';
+import { Review } from '../review';
+import { ReviewService } from '../review.service';
 
 @Component({
   selector: 'app-product-view',
@@ -10,11 +12,19 @@ import { ProductService } from '../product.service';
 })
 export class ProductViewComponent implements OnInit {
   product!:Product;
-  constructor(private productService:ProductService, private routes: ActivatedRoute,) {}
+  reviews:Review[] = [];
+  constructor(private productService:ProductService, private routes: ActivatedRoute, private reviewService:ReviewService, private changeDetection: ChangeDetectorRef) {
+  
+  }
 
   ngOnInit(): void {
     let id = parseInt(this.routes.snapshot.paramMap.get("id")!);
-    this.product = this.productService.getProductById(id);
+    this.productService.getProductById(id).then(p=>{this.product = p;this.changeDetection.detectChanges();});
+    this.reviewService.getReviewsById(id).subscribe((r)=>{
+      this.reviews = r.filter((x)=>true);
+      this.changeDetection.detectChanges();
+      
+    })
   }
 
 }

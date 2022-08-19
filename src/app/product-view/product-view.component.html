@@ -1,9 +1,14 @@
 <div class="product-view-container">
-<div class="product-view">
-    <img class="product-img" src={{product.imageUrl}}/>
-    <h3 class="product-title">{{product.name}}</h3>
-    <h4>${{(product.priceInCents/100).toFixed(2)}}</h4>
-    <p>{{product.description}}</p>
-  
-</div>
+    <div class="product-view" *ngIf="product!=null">
+        <img class="product-img" src={{product.imageUrl}} />
+        <h3 class="product-title">{{product.name}}</h3>
+        <h4>${{(product.priceInCents/100).toFixed(2)}}</h4>
+        <p>{{product.description}}</p>
+
+    </div>
+    <div class="review-container">
+        <div class="review-card" *ngFor="let r of reviews">
+            {{r.description}}
+        </div>
+    </div>
 </div>
