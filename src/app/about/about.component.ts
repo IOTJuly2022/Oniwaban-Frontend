@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DialogComponent } from '../dialog/dialog.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @Component({

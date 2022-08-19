@@ -29,6 +29,7 @@ export class ReviewComponent implements OnInit {
     console.log(this.description);
     let r_id = this.randomInteger(5000,6000);
     let p_id = this.product.id;
+    //this.http.post()
   }
   randomInteger(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
