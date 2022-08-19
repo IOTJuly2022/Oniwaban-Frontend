@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ReviewListComponent } from './review-list.component';
@@ -8,7 +9,8 @@ describe('ReviewListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ReviewListComponent ]
+      declarations: [ ReviewListComponent ],
+      imports: [HttpClientModule]
     })
     .compileComponents();
 

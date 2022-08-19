@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ProductService } from './product.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +7,7 @@ import { ProductService } from './product.service';
 })
 export class AppComponent {
   title = 'Oniwaban-Frontend';
-  constructor(private productService: ProductService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
