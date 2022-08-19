@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 import { ProductService } from './product.service';
-import { MatDialogModule } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-root',
