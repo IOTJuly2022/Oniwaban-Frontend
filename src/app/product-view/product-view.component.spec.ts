@@ -2,6 +2,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
+import { CartService } from '../cart.service';
+import { Product } from '../product';
 
 import { ProductViewComponent } from './product-view.component';
 
@@ -39,5 +41,9 @@ describe('ProductViewComponent', () => {
 
   it('should create', () => {
     expect(true).toBeTruthy();
+  });
+
+  it('should add to cart', () => {
+    
   });
 });
