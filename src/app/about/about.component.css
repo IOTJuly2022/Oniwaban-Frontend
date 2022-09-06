@@ -68,17 +68,17 @@ body {
   }
 
   div#nandith-info{
-    display: none;
+    display: block;
   }
 
   div#ken-info{
-    display: none;
+    display: block;
   }
 
   div#eli-info{
-    display: none;
+    display: block;
   }
 
   div#trent-info{
-    display: none;
+    display: block;
   }

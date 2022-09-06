@@ -17,8 +17,8 @@
         <p>Florida Institute of Technology graduate. Enjoys teaching others programming and is quite a skilled teacher
           at that.</p>
         <p>nandith.narayan@cognizant.com</p>
-        <p><button id="nandith-button" class="button" type="button" (click)="openDialogNandith()">Contact</button></p>
-        <div id="nandith-info">
+        <p><button *ngIf="nandithButton" id="nandith-button" class="button" type="button" (click)="openDialogNandith()">Contact</button></p>
+        <div *ngIf="nandithDisplay" id="nandith-info">
 
           <h1 mat-dialog-title>Additional Info</h1>
           <div mat-dialog-content>
@@ -41,8 +41,8 @@
         <p>Graduated from University of Wisconsin and the ideasmith for our baseball store. In a previous life, he was a
           MLB MVP. </p>
         <p>ken.bacchiani@cognizant.com</p>
-        <p><button id="ken-button" class="button" type="button" (click)="openDialogKen()">Contact</button></p>
-        <div id="ken-info">
+        <p><button *ngIf="kenButton" id="ken-button" class="button" type="button" (click)="openDialogKen()">Contact</button></p>
+        <div *ngIf="kenDisplay" id="ken-info">
 
           <h1 mat-dialog-title>Additional Info</h1>
           <div mat-dialog-content>
@@ -65,8 +65,8 @@
           <p>University of Wyoming graduate. Currently enjoying the mountainous region of Colorado. Hobbies include
             build-a-bear and etch-a-sketch.</p>
           <p>eli.oceanak@cognizant.com</p>
-          <p><button id="eli-button" class="button" type="button" (click)="openDialogEli()">Contact</button></p>
-          <div id="eli-info">
+          <p><button *ngIf="eliButton" id="eli-button" class="button" type="button" (click)="openDialogEli()">Contact</button></p>
+          <div *ngIf="eliDisplay" id="eli-info">
 
             <h1 mat-dialog-title>Additional Info</h1>
             <div mat-dialog-content>
@@ -90,8 +90,8 @@
               Maybe
               in the next life, but for now he's a software engineer.</p>
             <p>trent.williams@cognizant.com</p>
-            <p><button id="trent-button" class="button" type="button" (click)="openDialogTrent()">Contact</button></p>
-            <div id="trent-info">
+            <p><button *ngIf="trentButton" id="trent-button" class="button" type="button" (click)="openDialogTrent()">Contact</button></p>
+            <div *ngIf="trentDisplay" id="trent-info" >
 
               <h1 mat-dialog-title>Additional Info</h1>
               <div mat-dialog-content>

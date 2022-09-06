@@ -8,55 +8,38 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
+  nandithDisplay:boolean = false;
+  nandithButton:boolean = true;
+  eliDisplay:boolean = false;
+  eliButton:boolean = true;
+  kenDisplay:boolean = false;
+  kenButton:boolean = true;
+  trentDisplay:boolean = false;
+  trentButton:boolean = true;
 
   constructor() { }
 
   openDialogNandith(): void{
-  
-    const contactInfo = document.getElementById("nandith-info");
-    const contactButton = document.getElementById("nandith-button");
-    if(contactInfo != null){
-      contactInfo.style.display="block";
-      if(contactButton !=null){
-        contactButton.style.display="none";
-      }
-    }
+    this.nandithDisplay = true;
+    this.nandithButton = false;
   }
 
-  openDialogEli(): void{  
-    const contactInfoEli = document.getElementById("eli-info");
-    const contactButtonEli = document.getElementById("eli-button");
-    if(contactInfoEli != null){
-      contactInfoEli.style.display="block";
-      if(contactButtonEli !=null){
-        contactButtonEli.style.display="none";
-      }
-    }
-    }
+  openDialogEli(): void{
+    this.eliDisplay = true;
+    this.eliButton = false;  
+  }
 
 
   openDialogKen(): void{  
-    const contactInfoKen = document.getElementById("ken-info");
-    const contactButtonKen = document.getElementById("ken-button");
-    if(contactInfoKen != null){
-      contactInfoKen.style.display="block";
-      if(contactButtonKen !=null){
-        contactButtonKen.style.display="none";
-      }
-    }
-    }
+    this.kenDisplay = true;
+    this.kenButton = false;
+  }
 
 
   openDialogTrent(): void{  
-    const contactInfoTrent = document.getElementById("trent-info");
-    const contactButtonTrent = document.getElementById("trent-button");
-    if(contactInfoTrent != null){
-      contactInfoTrent.style.display="block";
-      if(contactButtonTrent !=null){
-        contactButtonTrent.style.display="none";
-      }
-    }
-    }
+    this.trentDisplay = true;
+    this.trentButton = false;
+  }
 
 
   ngOnInit(): void {
