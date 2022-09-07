@@ -58,8 +58,6 @@ export class CartComponent implements OnInit {
       this.cartList = data;
       this.totalCost = (this.calculate()/100);
       this.numItems =0 +  this.cartList.length;
-      }, (error) => {
-      console.log('error');
       });
   }
 

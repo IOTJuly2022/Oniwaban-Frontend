@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed} from '@angular/core/testing';
 import { Product } from '../product';
 
 import { CartComponent } from './cart.component';
@@ -36,5 +36,20 @@ describe('CartComponent', () => {
     checkOutButton.dispatchEvent(new Event('click'));
     fixture.detectChanges();
     expect(component.sendAlert).toHaveBeenCalledTimes(1);
+  });
+
+  it('should send alert', () => {
+    spyOn(component, "retractAlert");
+    let dummyElement = document.createElement('notification');
+    document.getElementById = jasmine.createSpy('HTML Element').and.returnValue(dummyElement);
+    component.sendAlert('msg');
+    expect(document.getElementById('notification')?.innerHTML).toEqual('<h3>msg</h3>');
+  });
+
+  it('should retract alert', () => {
+    let dummyElement = document.createElement('notification');
+    document.getElementById = jasmine.createSpy('HTML Element').and.returnValue(dummyElement);
+    component.retractAlert();
+    expect(document.getElementById('notification')?.style.height).toEqual('0px');
   });
 });
