@@ -1,6 +1,7 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 import { Product } from '../product';
 
 import { ReviewComponent } from './review.component';
@@ -8,6 +9,7 @@ import { ReviewComponent } from './review.component';
 describe('ReviewComponent', () => {
   let component: ReviewComponent;
   let fixture: ComponentFixture<ReviewComponent>;
+  let mockHttp = jasmine.createSpyObj('http',['post']);
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -25,6 +27,7 @@ describe('ReviewComponent', () => {
         },
     },
 },
+{provide: HttpClient, useValue: mockHttp }
 ],
       imports: [HttpClientModule]
     })
@@ -60,11 +63,15 @@ describe('ReviewComponent', () => {
     expect(document.getElementById('notification')?.style.height).toEqual('0px');
   });
 
+  
   it('should submit review', () => {
+    mockHttp.post.and.returnValue(of(true));
     spyOn(component, 'randomInteger');
     component.product = new Product(1, 'bat', 'desc', 'image', 110);
     component.submitReview();
     expect(component.randomInteger).toHaveBeenCalledTimes(1);
+    expect(mockHttp.post).toHaveBeenCalled();
   });
+
 
 });
