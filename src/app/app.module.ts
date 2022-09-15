@@ -14,6 +14,9 @@ import { ProductViewComponent } from './product-view/product-view.component';
 import { ReviewListComponent } from './review-list/review-list.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReviewComponent,
     ProductViewComponent,
     ReviewListComponent,
+    SignUpComponent,
+    SignInComponent,
+    ProfileComponent,
     
     
   ],
