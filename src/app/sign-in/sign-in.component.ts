@@ -1,7 +1,11 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { map, Observable } from 'rxjs';
+import { CartService } from '../cart.service';
 
 import { IUser, CognitoService } from '../cognito.service';
+import { Product } from '../product';
 
 @Component({
   selector: 'app-sign-in',
@@ -14,7 +18,7 @@ export class SignInComponent {
   user: IUser;
 
   constructor(private router: Router,
-              private cognitoService: CognitoService) {
+              private cognitoService: CognitoService, private httpClient: HttpClient, private cartService: CartService) {
     this.loading = false;
     this.user = {} as IUser;
   }
@@ -43,6 +47,7 @@ export class SignInComponent {
     this.loading = true;
     this.cognitoService.signIn(this.user)
     .then(() => {
+      this.cartService.getCart(this.user.email);
       this.router.navigate(['/profile']);
     }).catch(() => {
       this.sendAlert("Incorrect Username or Password, please try again");

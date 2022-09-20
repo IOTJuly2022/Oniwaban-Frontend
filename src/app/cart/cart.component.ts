@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { CartService } from '../cart.service';
+import { CognitoService } from '../cognito.service';
 import { Product } from '../product';
 
 @Component({
@@ -13,7 +14,7 @@ export class CartComponent implements OnInit {
   totalCost: number = 0;
   numItems!: number;
 
-  constructor(private cartService: CartService) {
+  constructor(private cartService: CartService, private cognitoService: CognitoService) {
     this.cartList = cartService.cartList;
     this.numItems = this.cartList.length
     this.totalCost = this.calculate()/100;
