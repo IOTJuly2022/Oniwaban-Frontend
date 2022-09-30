@@ -1,11 +1,15 @@
+
+import { formatCurrency } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Injectable ,EventEmitter, Output} from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfirmSignUpOptions } from '@aws-amplify/auth/lib-esm/types';
-import { map, Observable } from 'rxjs';
-import { CartItem } from './cart-item';
+import { map, Observable, of } from 'rxjs';
+import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
+import { cartItem } from './cart-item';
 import { CognitoService } from './cognito.service';
 import { Product } from './product';
+import { ProductService } from './product.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,20 +20,27 @@ export class CartService {
 
   @Output() update = new EventEmitter<Product[]>();
   cartList! : Product[];
-  email:string = '';
+  email:string = 'ken';
+  static id:number = 1;
 
-  constructor(private httpClient: HttpClient, private cognitoService: CognitoService) {
+  constructor(private httpClient: HttpClient, private cognitoService: CognitoService, private productService: ProductService) {
     this.cartList = [];
    }
 
   addToCart(p : Product){
+    let signedIn:boolean = false;
     this.cognitoService.isAuthenticated().subscribe(
       (response) => {
         if(response) {
-          this.addToCartDB(p);
+          signedIn = true;
+        } else {
+          signedIn = false;
         }
       }
     );
+    if(signedIn) {
+      this.addToCartDB(p);
+    }
     this.cartList.push(p);
   }
 
@@ -54,21 +65,33 @@ export class CartService {
     this.updater();
   }
 
-  public getCart(email: string): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(this.baseURL + "/getCart/" + email).pipe(
-      map(response => {
-        this.cartList = response;
-        this.email = email;
-        this.updater();
-        return response;
-      })
-    );
-
+  getCart() {
+    let toReturn:Product[] = [];
+    let items:Product[] = [];
+    let productId:Number[] = [];
+    this.productService.getAllProducts().subscribe(result => {items = result;
+    this.httpClient.get<Number[]>(this.baseURL + '/getCart/ken')
+         .subscribe(result => {productId = result;
+    if(productId.length == 0) {
+      this.cartList = [];
+    } else {
+      for(let i = 0; i < productId.length; i++) {
+        let value = productId[i];
+        for(let j = 0; j < items.length; j++) {
+          if(items[j].id == value) {
+            toReturn.push(items[j]);
+          }
+        }
+      }
+      this.cartList = toReturn;
+    }})})
   }
 
   public addToCartDB(p: Product): void {
-    let toAdd = new CartItem(this.email, p);
-    this.httpClient.post(this.baseURL+"/insertCart", toAdd);
+    let toAdd = new cartItem(CartService.id, this.email, p.id);
+    CartService.id++;
+    console.log('yrrd');
+    this.httpClient.post(this.baseURL+"/insertCart", toAdd).subscribe(result => console.log('added'));
   }
 
   public removeFromCartDB(p: Product) {

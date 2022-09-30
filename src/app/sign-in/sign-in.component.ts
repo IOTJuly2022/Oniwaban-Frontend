@@ -47,7 +47,7 @@ export class SignInComponent {
     this.loading = true;
     this.cognitoService.signIn(this.user)
     .then(() => {
-      this.cartService.getCart(this.user.email);
+      this.cartService.getCart();
       this.router.navigate(['/profile']);
     }).catch(() => {
       this.sendAlert("Incorrect Username or Password, please try again");
