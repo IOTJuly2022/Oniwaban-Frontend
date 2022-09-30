@@ -90,7 +90,6 @@ export class CartService {
   public addToCartDB(p: Product): void {
     let toAdd = new cartItem(CartService.id, this.email, p.id);
     CartService.id++;
-    console.log('yrrd');
     this.httpClient.post(this.baseURL+"/insertCart", toAdd).subscribe(result => console.log('added'));
   }
 
