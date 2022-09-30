@@ -54,13 +54,19 @@ export class CartService {
   }
 
   removeFromCart(p : Product) { 
+    let signedIn:boolean = false;
     this.cognitoService.isAuthenticated().subscribe(
       (response) => {
         if(response) {
-          this.removeFromCartDB(p);
+          signedIn = true;
+        } else {
+          signedIn = false;
         }
       }
     );
+    if(signedIn) {
+      this.removeFromCartDB(p);
+    }
     this.cartList = this.cartList.filter(prod => p.id != prod.id);
     this.updater();
   }
@@ -94,11 +100,7 @@ export class CartService {
   }
 
   public removeFromCartDB(p: Product) {
-    this.httpClient.delete(this.baseURL + "/getCart/" + this.email + '/'+ p.id).pipe(
-      map(response => {
-        return;
-      })
-    );
+    this.httpClient.delete(this.baseURL + "/getCart/" + this.email + '/'+ p.id).subscribe(result => console.log('deleted'));
     
   }
 }
