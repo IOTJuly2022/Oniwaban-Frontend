@@ -47,6 +47,7 @@ export class SignInComponent {
     this.loading = true;
     this.cognitoService.signIn(this.user)
     .then(() => {
+      this.cartService.updateEmail(this.user.email);
       this.cartService.getCart();
       this.router.navigate(['/profile']);
     }).catch(() => {

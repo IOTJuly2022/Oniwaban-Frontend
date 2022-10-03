@@ -20,11 +20,15 @@ export class CartService {
 
   @Output() update = new EventEmitter<Product[]>();
   cartList! : Product[];
-  email:string = 'ken';
+  email:string = '';
   static id:number = 1;
 
   constructor(private httpClient: HttpClient, private cognitoService: CognitoService, private productService: ProductService) {
     this.cartList = [];
+   }
+
+   updateEmail(email: string) {
+    this.email = email;
    }
 
   addToCart(p : Product){
@@ -32,6 +36,7 @@ export class CartService {
     this.cognitoService.isAuthenticated().subscribe(
       (response) => {
         if(response) {
+          console.log(this.email);
           signedIn = true;
         } else {
           signedIn = false;
@@ -76,7 +81,7 @@ export class CartService {
     let items:Product[] = [];
     let productId:Number[] = [];
     this.productService.getAllProducts().subscribe(result => {items = result;
-    this.httpClient.get<Number[]>(this.baseURL + '/getCart/ken')
+    this.httpClient.get<Number[]>(this.baseURL + '/getCart/'+this.email)
          .subscribe(result => {productId = result;
     if(productId.length == 0) {
       this.cartList = [];
