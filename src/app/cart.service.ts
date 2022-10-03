@@ -36,7 +36,6 @@ export class CartService {
     this.cognitoService.isAuthenticated().subscribe(
       (response) => {
         if(response) {
-          console.log(this.email);
           signedIn = true;
         } else {
           signedIn = false;
