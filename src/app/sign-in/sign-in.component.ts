@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { map, Observable } from 'rxjs';
@@ -18,7 +17,7 @@ export class SignInComponent {
   user: IUser;
 
   constructor(private router: Router,
-              private cognitoService: CognitoService, private httpClient: HttpClient, private cartService: CartService) {
+              private cognitoService: CognitoService, private cartService: CartService) {
     this.loading = false;
     this.user = {} as IUser;
   }

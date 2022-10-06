@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { CognitoService } from '../cognito.service';
@@ -8,12 +9,14 @@ describe('SignInComponent', () => {
   let component: SignInComponent;
   let fixture: ComponentFixture<SignInComponent>;
   let mockCognito = jasmine.createSpyObj('cognitoService',['signIn']);
+  let mockHttp = jasmine.createSpyObj('http',['post']);
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [FormsModule],
       declarations: [ SignInComponent ],
-      providers: [{provide: CognitoService, useValue: mockCognito}]
+      providers: [{provide: CognitoService, useValue: mockCognito},
+        {provide: HttpClient, useValue: mockHttp }]
     })
     .compileComponents();
 

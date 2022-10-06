@@ -17,6 +17,7 @@ import { ProductService } from './product.service';
 export class CartService {
   private baseURL: string = "http://oniwabanspring9-env.eba-rx6f4mp2.us-west-2.elasticbeanstalk.com";
   
+  
 
   @Output() update = new EventEmitter<Product[]>();
   cartList! : Product[];
